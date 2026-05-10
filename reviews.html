@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Отзывы родителей — English Stars School</title>
+<meta name="description" content="Отзывы родителей о занятиях в English Stars School.">
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  :root {
+    --yellow: #FFCE00;
+    --yellow-light: #FFE970;
+    --purple: #4B2EAA;
+    --purple-dark: #3A2389;
+    --purple-light: #6B4FD4;
+    --white: #FFFFFF;
+    --text: #1A1A2E;
+    --shadow: 0 4px 12px rgba(75, 46, 170, 0.15);
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(180deg, #4B2EAA 0%, #3A2389 100%);
+    min-height: 100vh;
+    color: var(--text);
+    padding: 20px 16px 40px;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    top: 8%;
+    left: -3%;
+    width: 100px;
+    height: 100px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23FFCE00' opacity='0.15'%3E%3Cpath d='M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: contain;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  body::after {
+    content: '';
+    position: fixed;
+    bottom: 12%;
+    right: -2%;
+    width: 80px;
+    height: 80px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23FFCE00' opacity='0.12'%3E%3Cpath d='M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: contain;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .container {
+    max-width: 480px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    color: var(--yellow);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    opacity: 0.85;
+    transition: opacity 0.2s;
+  }
+
+  .back-link:hover { opacity: 1; }
+
+  .back-link::before {
+    content: '←';
+    margin-right: 6px;
+    font-size: 18px;
+  }
+
+  .page-title {
+    text-align: center;
+    color: var(--white);
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+  }
+
+  .page-subtitle {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+
+  /* === ПЛАШКА "СКОРО НАПОЛНИМ" === */
+  .notice {
+    background: rgba(255, 206, 0, 0.12);
+    border: 1px solid rgba(255, 206, 0, 0.3);
+    border-radius: 16px;
+    padding: 16px 18px;
+    margin-bottom: 28px;
+    color: var(--white);
+    font-size: 13px;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  .notice strong {
+    color: var(--yellow);
+    display: block;
+    font-size: 14px;
+    margin-bottom: 4px;
+  }
+
+  /* === СЕКЦИЯ ПРЕПОДАВАТЕЛЯ === */
+  .teacher-section {
+    background: var(--white);
+    border-radius: 22px;
+    padding: 24px 18px;
+    margin-bottom: 24px;
+    box-shadow: var(--shadow);
+  }
+
+  .teacher-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 20px;
+    padding-bottom: 18px;
+    border-bottom: 2px solid #FFF8DC;
+  }
+
+  .teacher-avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #FFE970, #FFCE00);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--purple-dark);
+    flex-shrink: 0;
+    border: 3px solid var(--white);
+    box-shadow: 0 4px 12px rgba(255, 206, 0, 0.3);
+    overflow: hidden;
+  }
+
+  .teacher-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .teacher-info h2 {
+    font-size: 20px;
+    color: var(--purple);
+    font-weight: 800;
+    margin-bottom: 2px;
+    letter-spacing: -0.3px;
+  }
+
+  .teacher-info .role {
+    font-size: 13px;
+    color: #6b7280;
+    font-weight: 500;
+  }
+
+  /* === ГАЛЕРЕЯ ОТЗЫВОВ === */
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .review-item {
+    aspect-ratio: 9 / 16;
+    border-radius: 12px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #F3F0FF, #E8E0FF);
+    border: 2px dashed rgba(75, 46, 170, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: rgba(75, 46, 170, 0.5);
+    font-size: 11px;
+    text-align: center;
+    padding: 8px;
+    transition: transform 0.2s ease;
+  }
+
+  .review-item.has-image {
+    border: none;
+    background: var(--white);
+  }
+
+  .review-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .review-item.has-image:hover {
+    transform: scale(1.02);
+    cursor: pointer;
+  }
+
+  .review-placeholder-icon {
+    font-size: 28px;
+    margin-bottom: 6px;
+    opacity: 0.6;
+  }
+
+  .review-placeholder-text {
+    font-weight: 600;
+    line-height: 1.3;
+  }
+
+  .review-placeholder-num {
+    margin-top: 4px;
+    font-size: 10px;
+    opacity: 0.7;
+  }
+
+  /* === КНОПКА CTA === */
+  .cta-button {
+    display: block;
+    background: linear-gradient(135deg, var(--yellow-light), var(--yellow));
+    color: var(--purple-dark);
+    text-decoration: none;
+    padding: 20px 24px;
+    border-radius: 18px;
+    font-size: 17px;
+    font-weight: 800;
+    text-align: center;
+    box-shadow: 0 8px 24px rgba(255, 206, 0, 0.4);
+    margin-bottom: 20px;
+    transition: all 0.2s ease;
+  }
+
+  .cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(255, 206, 0, 0.5);
+  }
+
+  .cta-button .small {
+    display: block;
+    font-size: 12px;
+    font-weight: 500;
+    opacity: 0.7;
+    margin-top: 4px;
+  }
+
+  /* === ФУТЕР === */
+  .footer {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 12px;
+    padding-top: 20px;
+    margin-top: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .footer a {
+    color: var(--yellow);
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  /* === МОДАЛКА для просмотра скрина === */
+  .modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    cursor: pointer;
+  }
+
+  .modal.active {
+    display: flex;
+  }
+
+  .modal img {
+    max-width: 100%;
+    max-height: 90vh;
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  }
+
+  .modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: white;
+    font-size: 32px;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.5);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+  }
+
+  /* === АДАПТИВ === */
+  @media (max-width: 380px) {
+    .page-title { font-size: 24px; }
+    .teacher-section { padding: 20px 14px; }
+    .teacher-info h2 { font-size: 18px; }
+    .teacher-avatar { width: 56px; height: 56px; font-size: 24px; }
+    .reviews-grid { gap: 8px; }
+    .review-item { font-size: 10px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <a href="index.html" class="back-link">Назад</a>
+
+  <h1 class="page-title">Отзывы родителей</h1>
+  <p class="page-subtitle">Что говорят семьи о наших занятиях</p>
+
+  <!-- Плашка "обновление" -->
+  <div class="notice">
+    <strong>📸 Страница обновляется</strong>
+    Скоро здесь появятся отзывы родителей о занятиях с нашими преподавателями. А пока приглашаем вас на бесплатный пробный урок 👇
+  </div>
+
+  <!-- ===================================== -->
+  <!-- СЕКЦИЯ 1 — АННА                        -->
+  <!-- ===================================== -->
+  <div class="teacher-section">
+    <div class="teacher-header">
+      <!-- Аватар: чтобы заменить на фото — раскомментируйте <img> и закомментируйте букву "А" -->
+      <div class="teacher-avatar">
+        А
+        <!-- <img src="anna.jpg" alt="Анна"> -->
+      </div>
+      <div class="teacher-info">
+        <h2>Анна</h2>
+        <div class="role">Основатель школы</div>
+      </div>
+    </div>
+
+    <!-- Галерея отзывов: 8 ячеек.
+         Чтобы вставить отзыв — замените блок:
+         <div class="review-item">...</div>
+         на:
+         <div class="review-item has-image"><img src="reviews/anna-1.jpg" alt=""></div>
+    -->
+    <div class="reviews-grid">
+      <div class="review-item">
+        <div class="review-placeholder-icon">💬</div>
+        <div class="review-placeholder-text">Отзыв</div>
+        <div class="review-placeholder-num">1</div>
+      </div>
+      <div class="review-item">
+        <div class="review-placeholder-icon">💬</div>
+        <div class="review-placeholder-text">Отзыв</div>
+        <div class="review-placeholder-num">2</div>
+      </div>
+      <div class="review-item">
+        <div class="review-placeholder-icon">💬</div>
+        <div class="review-placeholder-text">Отзыв</div>
+        <div class="review-placeholder-num">3</div>
+      </div>
+      <div class="review-item">
+        <div class="review-placeholder-icon">💬</div>
+        <div class="review-placeholder-text">Отзыв</div>
+        <div class="review-placeholder-num">4</div>
+      </div>
+      <div class="review-item">
+        <div class="review-placeholder-icon">💬</div>
+        <div class="review-placeholder-text">Отзыв</div>
+        <div class="review-placeholder-num">5</div>
+      </div>
+      <div class="review-item">
+        <div class="review-placeholder-icon">💬</div>
+        <div class="review-placeholder-text">Отзыв</div>
+        <div class="review-placeholder-num">6</div>
+      </div>
+      <div class="review-item">
+        <div class="review-placeholder-icon">💬</div>
+        <div class="review-placeholder-text">Отзыв</div>
+        <div class="review-placeholder-num">7</div>
+      </div>
+      <div class="review-item">
+        <div class="review-placeholder-icon">💬</div>
+        <div class="review-placeholder-text">Отзыв</div>
+        <div class="review-placeholder-num">8</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================================== -->
+  <!-- СЕКЦИЯ 2 — ПРЕПОДАВАТЕЛЬ 2             -->
+  <!-- ===================================== -->
+  <div class="teacher-section">
+    <div class="teacher-header">
+      <div class="teacher-avatar">
+        ?
+        <!-- <img src="teacher2.jpg" alt="..."> -->
+      </div>
+      <div class="teacher-info">
+        <h2>Преподаватель 2</h2>
+        <div class="role">Замените имя и аватар</div>
+      </div>
+    </div>
+
+    <div class="reviews-grid">
+      <div class="review-item">
+        <div class="review-placeholder-icon">💬</div>
+        <div class="review-placeholder-text">Отзыв</div>
+        <div class="review-placeholder-num">1</div>
+      </div>
+      <div class="review-item">
+        <div class="review-placeholder-icon">💬</div>
+        <div class="review-placeholder-text">Отзыв</div>
+        <div class="review-placeholder-num">2</div>
+      </div>
+      <div class="review-item">
+        <div class="review-placeholder-icon">💬</div>
+        <div class="review-placeholder-text">Отзыв</div>
+        <div class="review-placeholder-num">3</div>
+      </div>
+      <div class="review-item">
+        <div class="review-placeholder-icon">💬</div>
+        <div class="review-placeholder-text">Отзыв</div>
+        <div class="review-placeholder-num">4</div>
+      </div>
+      <div class="review-item">
+        <div class="review-placeholder-icon">💬</div>
+        <div class="review-placeholder-text">Отзыв</div>
+        <div class="review-placeholder-num">5</div>
+      </div>
+      <div class="review-item">
+        <div class="review-placeholder-icon">💬</div>
+        <div class="review-placeholder-text">Отзыв</div>
+        <div class="review-placeholder-num">6</div>
+      </div>
+      <div class="review-item">
+        <div class="review-placeholder-icon">💬</div>
+        <div class="review-placeholder-text">Отзыв</div>
+        <div class="review-placeholder-num">7</div>
+      </div>
+      <div class="review-item">
+        <div class="review-placeholder-icon">💬</div>
+        <div class="review-placeholder-text">Отзыв</div>
+        <div class="review-placeholder-num">8</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- КНОПКА CTA -->
+  <a href="https://t.me/AnnaEnglishhh?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%20%D1%80%D0%B5%D0%B1%D1%91%D0%BD%D0%BA%D0%B0%20%D0%BD%D0%B0%20%D0%B1%D0%B5%D1%81%D0%BF%D0%BB%D0%B0%D1%82%D0%BD%D1%8B%D0%B9%20%D0%BF%D1%80%D0%BE%D0%B1%D0%BD%D1%8B%D0%B9%20%D1%83%D1%80%D0%BE%D0%BA" 
+     class="cta-button" target="_blank" rel="noopener">
+    🎁 Записаться на бесплатный пробный
+    <span class="small">Напишите в Telegram — подберём время</span>
+  </a>
+
+  <!-- ФУТЕР -->
+  <div class="footer">
+    <a href="mailto:englishstars2026@outlook.com">📧 englishstars2026@outlook.com</a>
+    <div style="margin: 12px 0 8px; font-size: 11px; line-height: 1.6;">
+      <a href="https://drive.google.com/file/d/1fLq4-Y9hOSELSRAgrH3qvyDWoBfMZqX1/view?usp=drive_link" target="_blank" rel="noopener" style="color: rgba(255,255,255,0.7); text-decoration: none;">Политика конфиденциальности</a>
+      <span style="color: rgba(255,255,255,0.3); margin: 0 6px;">•</span>
+      <a href="https://drive.google.com/file/d/1bQF7tmk4Vvr_AwDgGWfv1gKSTWRCIQG4/view?usp=drive_link" target="_blank" rel="noopener" style="color: rgba(255,255,255,0.7); text-decoration: none;">Правила оказания услуг</a>
+    </div>
+
+    <div style="margin-top: 8px; opacity: 0.7;">© English Stars School, 2026<div style="margin-top: 6px; opacity: 0.6; font-size: 10px;">NIP: 6793364526</div></div>
+  </div>
+
+</div>
+
+<!-- МОДАЛКА для просмотра отзыва -->
+<div class="modal" id="modal" onclick="closeModal()">
+  <span class="modal-close">×</span>
+  <img id="modal-img" src="" alt="">
+</div>
+
+<script>
+  // Модалка для просмотра скринов
+  document.querySelectorAll('.review-item.has-image').forEach(item => {
+    item.addEventListener('click', () => {
+      const img = item.querySelector('img');
+      if (img) {
+        document.getElementById('modal-img').src = img.src;
+        document.getElementById('modal').classList.add('active');
+      }
+    });
+  });
+  
+  function closeModal() {
+    document.getElementById('modal').classList.remove('active');
+  }
+</script>
+
+</body>
+</html>

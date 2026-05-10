@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Стоимость занятий — English Stars School</title>
+<meta name="description" content="Цены на занятия английским в English Stars School. Индивидуальные и парные уроки.">
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  :root {
+    --yellow: #FFCE00;
+    --yellow-light: #FFE970;
+    --purple: #4B2EAA;
+    --purple-dark: #3A2389;
+    --white: #FFFFFF;
+    --text: #1A1A2E;
+    --shadow: 0 4px 12px rgba(75, 46, 170, 0.15);
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(180deg, #4B2EAA 0%, #3A2389 100%);
+    min-height: 100vh;
+    color: var(--text);
+    padding: 20px 16px 40px;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    top: 8%;
+    left: -3%;
+    width: 100px;
+    height: 100px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23FFCE00' opacity='0.15'%3E%3Cpath d='M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: contain;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  body::after {
+    content: '';
+    position: fixed;
+    bottom: 12%;
+    right: -2%;
+    width: 80px;
+    height: 80px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23FFCE00' opacity='0.12'%3E%3Cpath d='M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: contain;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .container {
+    max-width: 480px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* === КНОПКА НАЗАД === */
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    color: var(--yellow);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 24px;
+    opacity: 0.85;
+    transition: opacity 0.2s;
+  }
+
+  .back-link:hover {
+    opacity: 1;
+  }
+
+  .back-link::before {
+    content: '←';
+    margin-right: 6px;
+    font-size: 18px;
+  }
+
+  /* === ЗАГОЛОВОК === */
+  .page-title {
+    text-align: center;
+    color: var(--white);
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+  }
+
+  .page-subtitle {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 14px;
+    margin-bottom: 28px;
+  }
+
+  /* === ПЕРЕКЛЮЧАТЕЛЬ ВАЛЮТ === */
+  .currency-switcher {
+    display: flex;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 4px;
+    margin-bottom: 24px;
+    gap: 4px;
+  }
+
+  .currency-btn {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.7);
+    padding: 10px 8px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: inherit;
+  }
+
+  .currency-btn:hover {
+    color: var(--white);
+  }
+
+  .currency-btn.active {
+    background: var(--yellow);
+    color: var(--purple-dark);
+    box-shadow: 0 2px 8px rgba(255, 206, 0, 0.4);
+  }
+
+  /* === КАРТОЧКА ПРАЙСА === */
+  .price-card {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 24px 20px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow);
+  }
+
+  .price-card-title {
+    text-align: center;
+    color: var(--purple);
+    font-size: 18px;
+    font-weight: 800;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .price-card-emoji {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 8px;
+  }
+
+  .price-card-desc {
+    text-align: center;
+    color: #6b7280;
+    font-size: 13px;
+    margin-bottom: 20px;
+  }
+
+  /* === СТРОКИ ПРАЙСА === */
+  .price-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 0;
+    border-bottom: 2px solid #FFF8DC;
+  }
+
+  .price-row:last-child {
+    border-bottom: none;
+  }
+
+  .price-duration {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--purple);
+  }
+
+  .price-amount {
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--purple);
+    font-family: Georgia, serif;
+  }
+
+  .price-amount .currency {
+    font-size: 18px;
+    margin-left: 2px;
+  }
+
+  /* === ИНФО-БЛОК === */
+  .info-block {
+    background: rgba(255, 206, 0, 0.15);
+    border: 1px solid rgba(255, 206, 0, 0.3);
+    border-radius: 16px;
+    padding: 16px 18px;
+    margin-bottom: 24px;
+    color: var(--white);
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .info-block .info-icon {
+    font-size: 18px;
+    margin-right: 6px;
+  }
+
+  .info-block strong {
+    color: var(--yellow);
+  }
+
+  /* === КНОПКА CTA === */
+  .cta-button {
+    display: block;
+    background: linear-gradient(135deg, var(--yellow-light), var(--yellow));
+    color: var(--purple-dark);
+    text-decoration: none;
+    padding: 20px 24px;
+    border-radius: 18px;
+    font-size: 17px;
+    font-weight: 800;
+    text-align: center;
+    box-shadow: 0 8px 24px rgba(255, 206, 0, 0.4);
+    margin-bottom: 24px;
+    transition: all 0.2s ease;
+  }
+
+  .cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(255, 206, 0, 0.5);
+  }
+
+  .cta-button .small {
+    display: block;
+    font-size: 12px;
+    font-weight: 500;
+    opacity: 0.7;
+    margin-top: 4px;
+  }
+
+  /* === ФУТЕР === */
+  .footer {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 12px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .footer a {
+    color: var(--yellow);
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  /* === АДАПТИВ === */
+  @media (max-width: 380px) {
+    .page-title { font-size: 24px; }
+    .price-card { padding: 20px 16px; }
+    .price-duration { font-size: 16px; }
+    .price-amount { font-size: 22px; }
+    .currency-btn { font-size: 12px; padding: 8px 4px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <a href="index.html" class="back-link">Назад</a>
+
+  <h1 class="page-title">Стоимость занятий</h1>
+  <p class="page-subtitle">Прозрачные цены без скрытых платежей</p>
+
+  <!-- ПЕРЕКЛЮЧАТЕЛЬ ВАЛЮТ -->
+  <div class="currency-switcher">
+    <button class="currency-btn active" data-currency="EUR">EUR €</button>
+    <button class="currency-btn" data-currency="PLN">PLN zł</button>
+    <button class="currency-btn" data-currency="BYN">BYN Br</button>
+    <button class="currency-btn" data-currency="RUB">RUB ₽</button>
+  </div>
+
+  <!-- ИНДИВИДУАЛЬНЫЕ УРОКИ -->
+  <div class="price-card">
+    <div class="price-card-emoji">👤</div>
+    <div class="price-card-title">Индивидуальные занятия</div>
+    <div class="price-card-desc">Внимание только вашему ребёнку</div>
+
+    <div class="price-row">
+      <span class="price-duration">30 мин</span>
+      <span class="price-amount" data-eur="8" data-pln="35" data-byn="26" data-rub="705">
+        <span class="value">8</span><span class="currency">€</span>
+      </span>
+    </div>
+    <div class="price-row">
+      <span class="price-duration">45 мин</span>
+      <span class="price-amount" data-eur="10" data-pln="42" data-byn="33" data-rub="880">
+        <span class="value">10</span><span class="currency">€</span>
+      </span>
+    </div>
+    <div class="price-row">
+      <span class="price-duration">60 мин</span>
+      <span class="price-amount" data-eur="12" data-pln="51" data-byn="39" data-rub="1060">
+        <span class="value">12</span><span class="currency">€</span>
+      </span>
+    </div>
+  </div>
+
+  <!-- ЗАНЯТИЯ В ПАРЕ -->
+  <div class="price-card">
+    <div class="price-card-emoji">👥</div>
+    <div class="price-card-title">Занятия в паре</div>
+    <div class="price-card-desc">Веселее и доступнее — учиться с другом</div>
+
+    <div class="price-row">
+      <span class="price-duration">30 мин</span>
+      <span class="price-amount" data-eur="5" data-pln="25" data-byn="20" data-rub="530">
+        <span class="value">5</span><span class="currency">€</span>
+      </span>
+    </div>
+    <div class="price-row">
+      <span class="price-duration">45 мин</span>
+      <span class="price-amount" data-eur="7" data-pln="30" data-byn="23" data-rub="620">
+        <span class="value">7</span><span class="currency">€</span>
+      </span>
+    </div>
+    <div class="price-row">
+      <span class="price-duration">60 мин</span>
+      <span class="price-amount" data-eur="8" data-pln="34" data-byn="26" data-rub="705">
+        <span class="value">8</span><span class="currency">€</span>
+      </span>
+    </div>
+  </div>
+
+  <!-- ИНФО -->
+  <div class="info-block">
+    <span class="info-icon">💡</span>
+    <strong>Стоимость месяца</strong> рассчитывается индивидуально под расписание ребёнка. Кто-то посещает только индивидуальные уроки, кто-то совмещает с парными — напишите, и мы подберём оптимальный вариант.
+  </div>
+
+  <!-- КНОПКА -->
+  <a href="https://t.me/AnnaEnglishhh?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BE%D0%B1%D1%81%D1%83%D0%B4%D0%B8%D1%82%D1%8C%20%D0%B7%D0%B0%D0%BD%D1%8F%D1%82%D0%B8%D1%8F" class="cta-button" target="_blank" rel="noopener">
+    🎁 Записаться на бесплатный пробный
+    <span class="small">Напишите в Telegram — обсудим формат и расписание</span>
+  </a>
+
+  <!-- ФУТЕР -->
+  <div class="footer">
+    <a href="mailto:englishstars2026@outlook.com">📧 englishstars2026@outlook.com</a>
+    <div style="margin: 12px 0 8px; font-size: 11px; line-height: 1.6;">
+      <a href="https://drive.google.com/file/d/1fLq4-Y9hOSELSRAgrH3qvyDWoBfMZqX1/view?usp=drive_link" target="_blank" rel="noopener" style="color: rgba(255,255,255,0.7); text-decoration: none;">Политика конфиденциальности</a>
+      <span style="color: rgba(255,255,255,0.3); margin: 0 6px;">•</span>
+      <a href="https://drive.google.com/file/d/1bQF7tmk4Vvr_AwDgGWfv1gKSTWRCIQG4/view?usp=drive_link" target="_blank" rel="noopener" style="color: rgba(255,255,255,0.7); text-decoration: none;">Правила оказания услуг</a>
+    </div>
+
+    <div class="copyright">© English Stars School, 2026 · NIP: 6793364526</div>
+  </div>
+
+</div>
+
+<script>
+  const buttons = document.querySelectorAll('.currency-btn');
+  const symbols = { EUR: '€', PLN: 'zł', BYN: 'Br', RUB: '₽' };
+  
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const currency = btn.dataset.currency;
+      
+      // Активная кнопка
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      // Обновляем все цены
+      document.querySelectorAll('.price-amount').forEach(el => {
+        const value = el.dataset[currency.toLowerCase()];
+        const symbol = symbols[currency];
+        el.querySelector('.value').textContent = value;
+        el.querySelector('.currency').textContent = ' ' + symbol;
+      });
+    });
+  });
+</script>
+
+</body>
+</html>

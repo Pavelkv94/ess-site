@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Летний лагерь 2026 — English Stars School</title>
+<meta name="description" content="Online Summer Camp 2026 — 9 недель приключений на английском для детей 5-13 лет. Minecraft, Гарри Поттер, MrBeast и многое другое.">
+
+<meta property="og:title" content="Online Summer Camp 2026 — English Stars School">
+<meta property="og:description" content="9 тематических недель — Minecraft, Гарри Поттер, MrBeast и многое другое. 5 июня — 10 августа.">
+<meta property="og:type" content="website">
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  :root {
+    --yellow: #FFCE00;
+    --yellow-light: #FFE970;
+    --yellow-dark: #FFB800;
+    --purple: #4B2EAA;
+    --purple-dark: #3A2389;
+    --purple-light: #6B4FD4;
+    --pink: #FF6B9D;
+    --green: #4CAF50;
+    --orange: #FF8C42;
+    --blue: #5B9EFF;
+    --red: #FF5252;
+    --white: #FFFFFF;
+    --text: #1A1A2E;
+    --gray: #6b7280;
+    --bg-light: #FFF8DC;
+    --shadow: 0 4px 12px rgba(75, 46, 170, 0.15);
+    --shadow-lg: 0 8px 32px rgba(75, 46, 170, 0.2);
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(180deg, #4B2EAA 0%, #3A2389 100%);
+    min-height: 100vh;
+    color: var(--text);
+    padding: 16px 14px 40px;
+    position: relative;
+    overflow-x: hidden;
+    line-height: 1.5;
+  }
+
+  body::before {
+    content: '☀️';
+    position: fixed;
+    top: 5%;
+    right: -20px;
+    font-size: 100px;
+    opacity: 0.08;
+    pointer-events: none;
+    z-index: 0;
+    transform: rotate(15deg);
+  }
+
+  body::after {
+    content: '🏖️';
+    position: fixed;
+    bottom: 8%;
+    left: -10px;
+    font-size: 80px;
+    opacity: 0.08;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .container {
+    max-width: 480px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    color: var(--yellow);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    opacity: 0.85;
+    transition: opacity 0.2s;
+  }
+
+  .back-link:hover { opacity: 1; }
+
+  .back-link::before {
+    content: '←';
+    margin-right: 6px;
+    font-size: 18px;
+  }
+
+  /* === ШАПКА === */
+  .hero {
+    text-align: center;
+    color: var(--white);
+    padding: 8px 0 28px;
+  }
+
+  .hero-emoji {
+    font-size: 56px;
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  .hero-tag {
+    display: inline-block;
+    background: rgba(255, 206, 0, 0.2);
+    color: var(--yellow);
+    border: 1px solid rgba(255, 206, 0, 0.4);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 14px;
+  }
+
+  .hero-title {
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 12px;
+    letter-spacing: -0.5px;
+    line-height: 1.18;
+  }
+
+  .hero-subtitle {
+    font-size: 14px;
+    opacity: 0.92;
+    margin-bottom: 24px;
+    font-weight: 500;
+    color: var(--yellow);
+    letter-spacing: 0.5px;
+  }
+
+  .hero-description {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 16px 18px;
+    margin-bottom: 24px;
+    font-size: 14px;
+    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.95);
+  }
+
+  /* === КНОПКИ === */
+  .btn-primary {
+    display: block;
+    background: linear-gradient(135deg, var(--yellow-light), var(--yellow));
+    color: var(--purple-dark);
+    text-decoration: none;
+    padding: 18px 24px;
+    border-radius: 18px;
+    font-size: 17px;
+    font-weight: 800;
+    text-align: center;
+    box-shadow: 0 8px 24px rgba(255, 206, 0, 0.4);
+    transition: all 0.2s ease;
+    animation: pulse 2.5s ease-in-out infinite;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    font-family: inherit;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(255, 206, 0, 0.5);
+  }
+
+  .btn-primary .small {
+    display: block;
+    font-size: 12px;
+    font-weight: 500;
+    opacity: 0.7;
+    margin-top: 4px;
+  }
+
+  .btn-secondary {
+    display: block;
+    background: transparent;
+    color: var(--white);
+    text-decoration: none;
+    padding: 14px 20px;
+    border-radius: 14px;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    border: 1.5px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.2s ease;
+    margin-top: 10px;
+  }
+
+  .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.5);
+  }
+
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 8px 24px rgba(255, 206, 0, 0.4); }
+    50% { box-shadow: 0 8px 32px rgba(255, 206, 0, 0.65); }
+  }
+
+  /* === БЛОКИ === */
+  .section {
+    background: var(--white);
+    border-radius: 22px;
+    padding: 24px 20px;
+    margin-bottom: 18px;
+    box-shadow: var(--shadow);
+  }
+
+  .section-title {
+    color: var(--purple);
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 6px;
+    letter-spacing: -0.3px;
+    line-height: 1.25;
+  }
+
+  .section-subtitle {
+    color: var(--gray);
+    font-size: 13px;
+    margin-bottom: 18px;
+  }
+
+  /* === ПАРАМЕТРЫ === */
+  .params-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .param-card {
+    background: linear-gradient(135deg, #F8F5FF, #EFE9FF);
+    border-radius: 12px;
+    padding: 14px 12px;
+    text-align: center;
+    border: 1px solid rgba(75, 46, 170, 0.08);
+  }
+
+  .param-icon {
+    font-size: 22px;
+    margin-bottom: 4px;
+  }
+
+  .param-label {
+    font-size: 10px;
+    color: var(--gray);
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 2px;
+  }
+
+  .param-value {
+    font-size: 13px;
+    color: var(--purple);
+    font-weight: 800;
+    line-height: 1.2;
+  }
+
+  /* === ПРОГРАММА — НЕДЕЛИ === */
+  .weeks-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .week-item {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 16px 16px 16px 20px;
+    box-shadow: var(--shadow);
+    position: relative;
+    border-left: 5px solid var(--purple);
+    transition: transform 0.2s ease;
+  }
+
+  .week-item:hover {
+    transform: translateX(4px);
+  }
+
+  /* Цвета недель */
+  .week-item.opening { border-left-color: var(--yellow-dark); }
+  .week-item.minecraft { border-left-color: var(--green); }
+  .week-item.space { border-left-color: var(--purple-light); }
+  .week-item.digital { border-left-color: var(--blue); }
+  .week-item.pokemon { border-left-color: var(--red); }
+  .week-item.harry { border-left-color: #722F37; }
+  .week-item.heroes { border-left-color: var(--orange); }
+  .week-item.sports { border-left-color: var(--pink); }
+  .week-item.animals { border-left-color: var(--green); }
+  .week-item.mrbeast { border-left-color: var(--red); }
+  .week-item.finale { border-left-color: var(--yellow); background: linear-gradient(135deg, #FFF8DC, #FFFFFF); }
+
+  .week-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 8px;
+  }
+
+  .week-emoji {
+    font-size: 28px;
+    flex-shrink: 0;
+    line-height: 1;
+  }
+
+  .week-info {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .week-title {
+    font-size: 15px;
+    font-weight: 800;
+    color: var(--purple);
+    margin-bottom: 2px;
+    line-height: 1.2;
+  }
+
+  .week-dates {
+    font-size: 11px;
+    color: var(--gray);
+    font-weight: 600;
+  }
+
+  .week-desc {
+    font-size: 13px;
+    color: var(--text);
+    line-height: 1.45;
+    padding-left: 40px;
+  }
+
+  /* === АНГЛИЙСКИЙ В ЛАГЕРЕ === */
+  .highlight-block {
+    background: linear-gradient(135deg, var(--yellow-light), var(--yellow));
+    border-radius: 22px;
+    padding: 22px 20px;
+    margin-bottom: 18px;
+    color: var(--purple-dark);
+    box-shadow: 0 8px 32px rgba(255, 206, 0, 0.3);
+  }
+
+  .highlight-block .icon {
+    font-size: 32px;
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  .highlight-block-title {
+    font-size: 18px;
+    font-weight: 800;
+    margin-bottom: 8px;
+  }
+
+  .highlight-block-text {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  /* === ДЛЯ РОДИТЕЛЕЙ === */
+  .check-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .check-list li {
+    display: flex;
+    align-items: flex-start;
+    padding: 10px 0;
+    font-size: 14px;
+    color: var(--text);
+    line-height: 1.45;
+    border-bottom: 1px solid var(--bg-light);
+  }
+
+  .check-list li:last-child {
+    border-bottom: none;
+  }
+
+  .check-list li::before {
+    content: '✅';
+    margin-right: 10px;
+    flex-shrink: 0;
+    font-size: 14px;
+  }
+
+  /* === ЦЕНЫ === */
+  .pricing {
+    background: linear-gradient(135deg, var(--purple), var(--purple-dark));
+    border-radius: 22px;
+    padding: 24px 20px;
+    margin-bottom: 18px;
+    color: var(--white);
+    box-shadow: var(--shadow-lg);
+    border: 1px solid rgba(255, 206, 0, 0.2);
+  }
+
+  .pricing-header {
+    text-align: center;
+    margin-bottom: 18px;
+  }
+
+  .pricing-title {
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 8px;
+  }
+
+  .pricing-subtitle {
+    font-size: 12px;
+    opacity: 0.85;
+  }
+
+  /* Переключатель валют */
+  .currency-switcher {
+    display: flex;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 4px;
+    margin-bottom: 18px;
+    gap: 4px;
+  }
+
+  .currency-btn {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.7);
+    padding: 10px 8px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: inherit;
+  }
+
+  .currency-btn:hover {
+    color: var(--white);
+  }
+
+  .currency-btn.active {
+    background: var(--yellow);
+    color: var(--purple-dark);
+    box-shadow: 0 2px 8px rgba(255, 206, 0, 0.4);
+  }
+
+  .pricing-card {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 16px;
+    padding: 18px 16px;
+    margin-bottom: 12px;
+    backdrop-filter: blur(10px);
+    text-align: center;
+  }
+
+  .pricing-card.popular {
+    background: rgba(255, 206, 0, 0.15);
+    border: 2px solid var(--yellow);
+    position: relative;
+  }
+
+  .pricing-card.popular::before {
+    content: '🔥 Только для первых 10';
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--yellow);
+    color: var(--purple-dark);
+    font-size: 11px;
+    font-weight: 800;
+    padding: 4px 12px;
+    border-radius: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+  }
+
+  .pricing-card.free {
+    background: linear-gradient(135deg, rgba(76, 175, 80, 0.2), rgba(76, 175, 80, 0.1));
+    border: 2px solid rgba(76, 175, 80, 0.5);
+    position: relative;
+  }
+
+  .pricing-card.free::before {
+    content: '🎁 Бесплатно';
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--green);
+    color: var(--white);
+    font-size: 11px;
+    font-weight: 800;
+    padding: 4px 12px;
+    border-radius: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+  }
+
+  .pricing-card-title {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    opacity: 0.95;
+  }
+
+  .pricing-amount {
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--yellow);
+    font-family: Georgia, serif;
+    margin-bottom: 4px;
+    line-height: 1;
+  }
+
+  .pricing-amount .currency {
+    font-size: 22px;
+    margin-left: 4px;
+  }
+
+  .pricing-amount.regular {
+    color: var(--white);
+    font-size: 24px;
+    text-decoration: line-through;
+    opacity: 0.5;
+    font-weight: 600;
+    margin-bottom: 0;
+  }
+
+  .pricing-amount.regular .currency {
+    font-size: 16px;
+  }
+
+  .pricing-card-note {
+    font-size: 11px;
+    opacity: 0.75;
+    margin-top: 6px;
+  }
+
+  .pricing-free-text {
+    font-size: 13px;
+    line-height: 1.5;
+    margin-top: 8px;
+  }
+
+  /* === CTA-БЛОК === */
+  .cta-block {
+    background: linear-gradient(135deg, var(--purple-light), var(--purple));
+    border-radius: 22px;
+    padding: 26px 20px;
+    margin-bottom: 18px;
+    text-align: center;
+    color: var(--white);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .cta-block-title {
+    font-size: 22px;
+    font-weight: 800;
+    margin-bottom: 8px;
+    line-height: 1.25;
+  }
+
+  .cta-block-text {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-bottom: 16px;
+    line-height: 1.5;
+  }
+
+  .cta-urgency {
+    display: inline-block;
+    background: rgba(255, 206, 0, 0.2);
+    color: var(--yellow);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+
+  /* === ФУТЕР === */
+  .footer {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 12px;
+    padding-top: 20px;
+    margin-top: 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .footer a {
+    color: var(--yellow);
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  /* === АДАПТИВ === */
+  @media (max-width: 380px) {
+    .hero-title { font-size: 24px; }
+    .hero-emoji { font-size: 48px; }
+    .section { padding: 20px 16px; }
+    .week-desc { padding-left: 0; margin-top: 6px; }
+    .week-emoji { font-size: 24px; }
+    .week-title { font-size: 14px; }
+    .pricing-amount { font-size: 28px; }
+    .currency-btn { font-size: 11px; padding: 8px 4px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <a href="index.html" class="back-link">Назад</a>
+
+  <!-- === ШАПКА === -->
+  <div class="hero">
+    <span class="hero-emoji">🏕️</span>
+    <span class="hero-tag">Online Summer Camp 2026</span>
+    <h1 class="hero-title">Этим летом ваш ребёнок будет считать дни до вторника и пятницы!</h1>
+    <p class="hero-subtitle">English Stars School • 5 июня — 10 августа</p>
+    
+    <div class="hero-description">
+      Онлайн-лагерь на английском языке для детей <strong>5–13 лет</strong>. <br /> 10 недель — каждая как отдельное приключение.<br /> Живой учитель, игры, мультики, творчество и незабываемый финал 10 августа.
+    </div>
+    
+    <a href="#" class="btn-primary" id="signup-btn-top" onclick="alert('Скоро здесь будет ссылка на форму записи. Пока запишитесь через Telegram.'); return false;">
+      📝 Записаться в лагерь
+      <span class="small">Только 10 мест по специальной цене</span>
+    </a>
+    
+    <a href="https://t.me/AnnaEnglishhh?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%83%D0%B7%D0%BD%D0%B0%D1%82%D1%8C%20%D0%BF%D1%80%D0%BE%20%D0%BB%D0%B5%D1%82%D0%BD%D0%B8%D0%B9%20%D0%BB%D0%B0%D0%B3%D0%B5%D1%80%D1%8C" class="btn-secondary" target="_blank" rel="noopener">
+      💬 Задать вопрос про лагерь
+    </a>
+  </div>
+
+  <!-- === ПАРАМЕТРЫ === -->
+  <div class="section">
+    <h2 class="section-title">Что вас ждёт</h2>
+    <div class="params-grid">
+      <div class="param-card">
+        <div class="param-icon">📅</div>
+        <div class="param-label">Период</div>
+        <div class="param-value">5 июня — 10 августа</div>
+      </div>
+      <div class="param-card">
+        <div class="param-icon">📆</div>
+        <div class="param-label">Дни</div>
+        <div class="param-value">Вторник + пятница</div>
+      </div>
+      <div class="param-card">
+        <div class="param-icon">💻</div>
+        <div class="param-label">Платформа</div>
+        <div class="param-value">Microsoft Teams</div>
+      </div>
+      <div class="param-card">
+        <div class="param-icon">👧</div>
+        <div class="param-label">Возраст</div>
+        <div class="param-value">5–13 лет</div>
+      </div>
+      <div class="param-card">
+        <div class="param-icon">📚</div>
+        <div class="param-label">Занятий</div>
+        <div class="param-value">20 занятий</div>
+      </div>
+      <div class="param-card">
+        <div class="param-icon">🏁</div>
+        <div class="param-label">Финал</div>
+        <div class="param-value">10 августа — Awards</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- === ПРОГРАММА: 9 НЕДЕЛЬ === -->
+  <div class="section">
+    <h2 class="section-title">Программа лагеря</h2>
+    <p class="section-subtitle">Opening Day, 9 тематических недель и Grand Finale</p>
+    
+    <div class="weeks-list">
+      
+      <div class="week-item opening">
+        <div class="week-header">
+          <span class="week-emoji">⭐</span>
+          <div class="week-info">
+            <div class="week-title">Opening Day</div>
+            <div class="week-dates">5 июня</div>
+          </div>
+        </div>
+        <div class="week-desc">Знакомимся, играем, голосуем за любимую неделю и смотрим мультик Pixar вместе.</div>
+      </div>
+
+      <div class="week-item minecraft">
+        <div class="week-header">
+          <span class="week-emoji">🎮</span>
+          <div class="week-info">
+            <div class="week-title">Неделя 1 — Minecraft Week</div>
+            <div class="week-dates">9 и 12 июня</div>
+          </div>
+        </div>
+        <div class="week-desc">Строим город мечты, проходим командный квест на выживание и создаём собственного скина.</div>
+      </div>
+
+      <div class="week-item space">
+        <div class="week-header">
+          <span class="week-emoji">🚀</span>
+          <div class="week-info">
+            <div class="week-title">Неделя 2 — Space Mission</div>
+            <div class="week-dates">16 и 19 июня</div>
+          </div>
+        </div>
+        <div class="week-desc">Летим к планетам с NASA, создаём своего инопланетянина и тренируемся как настоящие астронавты.</div>
+      </div>
+
+      <div class="week-item digital">
+        <div class="week-header">
+          <span class="week-emoji">📺</span>
+          <div class="week-info">
+            <div class="week-title">Неделя 3 — Digital Creators</div>
+            <div class="week-dates">23 и 26 июня</div>
+          </div>
+        </div>
+        <div class="week-desc">Снимаем мини-влог, становимся блогерами и создаём свою первую программу в Scratch — настоящее программирование для детей.</div>
+      </div>
+
+      <div class="week-item pokemon">
+        <div class="week-header">
+          <span class="week-emoji">⚡</span>
+          <div class="week-info">
+            <div class="week-title">Неделя 4 — Pokémon Week</div>
+            <div class="week-dates">30 июня и 3 июля</div>
+          </div>
+        </div>
+        <div class="week-desc">Угадываем покемонов по силуэту, создаём своего и участвуем в настоящем покемон-турнире.</div>
+      </div>
+
+      <div class="week-item harry">
+        <div class="week-header">
+          <span class="week-emoji">🧙</span>
+          <div class="week-info">
+            <div class="week-title">Неделя 5 — Harry Potter</div>
+            <div class="week-dates">7 и 10 июля</div>
+          </div>
+        </div>
+        <div class="week-desc">Сортировочная шляпа распределяет по факультетам, учим заклинания и играем в Квиддич онлайн.</div>
+      </div>
+
+      <div class="week-item heroes">
+        <div class="week-header">
+          <span class="week-emoji">🦸</span>
+          <div class="week-info">
+            <div class="week-title">Неделя 6 — Superheroes</div>
+            <div class="week-dates">14 и 17 июля</div>
+          </div>
+        </div>
+        <div class="week-desc">Создаём своего супергероя и спасаем мир в большой командной миссии.</div>
+      </div>
+
+      <div class="week-item sports">
+        <div class="week-header">
+          <span class="week-emoji">💪</span>
+          <div class="week-info">
+            <div class="week-title">Неделя 7 — Sports & Active Games</div>
+            <div class="week-dates">21 и 24 июля</div>
+          </div>
+        </div>
+        <div class="week-desc">Онлайн-тренировки и мастер-класс по фирменному танцу школы English Stars.</div>
+      </div>
+
+      <div class="week-item animals">
+        <div class="week-header">
+          <span class="week-emoji">🐾</span>
+          <div class="week-info">
+            <div class="week-title">Неделя 8 — Animal Kingdom</div>
+            <div class="week-dates">28 и 31 июля</div>
+          </div>
+        </div>
+        <div class="week-desc">Делаем маски животных своими руками и смотрим National Geographic вместе.</div>
+      </div>
+
+      <div class="week-item mrbeast">
+        <div class="week-header">
+          <span class="week-emoji">😈</span>
+          <div class="week-info">
+            <div class="week-title">Неделя 9 — MrBeast Challenge Week</div>
+            <div class="week-dates">4 и 7 августа</div>
+          </div>
+        </div>
+        <div class="week-desc">Самая безумная неделя лагеря — большой челлендж, командные испытания и подготовка к финалу.</div>
+      </div>
+
+      <div class="week-item finale">
+        <div class="week-header">
+          <span class="week-emoji">🏆</span>
+          <div class="week-info">
+            <div class="week-title">Grand Finale — Awards Ceremony</div>
+            <div class="week-dates">10 августа</div>
+          </div>
+        </div>
+        <div class="week-desc">Красная дорожка, показ лучших работ за лето, реальные подарки и торжественная церемония награждения.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- === АНГЛИЙСКИЙ В КАЖДОМ ЗАНЯТИИ === -->
+  <div class="highlight-block">
+    <span class="icon">🎯</span>
+    <div class="highlight-block-title">Английский — в каждом занятии</div>
+    <div class="highlight-block-text">
+      Каждая неделя — новая лексика через игру и приключение. Дети говорят, слушают, думают на английском — и даже не замечают, что учатся!
+    </div>
+  </div>
+
+  <!-- === ДЛЯ РОДИТЕЛЕЙ === -->
+  <div class="section">
+    <h2 class="section-title">Для родителей</h2>
+    <p class="section-subtitle">Почему это лучшее решение на лето</p>
+    <ul class="check-list">
+      <li>Английский&nbsp;<strong>не теряется за лето</strong></li>
+      <li><strong>Живое общение&nbsp;</strong> с учителем и детьми из разных стран</li>
+      <li><strong>Творчество, движение, игра&nbsp;</strong> — не просто скучный урок</li>
+      <li><strong>Гибкая программа:&nbsp;</strong> подойдет для детей от 5 до 13 лет</li>
+      <li><strong>Бесплатно&nbsp;</strong> для всех учеников English Stars School</li>
+    </ul>
+  </div>
+
+  <!-- === ЦЕНЫ === -->
+  <div class="pricing">
+    <div class="pricing-header">
+      <div class="pricing-title">Стоимость лагеря</div>
+      <div class="pricing-subtitle">За весь сезон — 5 июня — 10 августа</div>
+    </div>
+
+    <!-- Переключатель валют -->
+    <div class="currency-switcher">
+      <button class="currency-btn" data-currency="EUR">EUR €</button>
+      <button class="currency-btn active" data-currency="BYN">BYN Br</button>
+      <button class="currency-btn" data-currency="RUB">RUB ₽</button>
+      <button class="currency-btn" data-currency="PLN">PLN zł</button>
+    </div>
+
+    <!-- Карточка ранней птички -->
+    <div class="pricing-card popular">
+      <div class="pricing-card-title">Первые 10 учеников</div>
+      <div class="pricing-amount" data-eur="35" data-pln="149" data-byn="119" data-rub="3200">
+        <span class="value">119</span><span class="currency">Br</span>
+      </div>
+      <div class="pricing-card-note">Скидка 30% — успейте записаться в первую группу</div>
+    </div>
+
+    <!-- Стандартная цена -->
+    <div class="pricing-card">
+      <div class="pricing-card-title">Стандартная цена</div>
+      <div class="pricing-amount regular" data-eur="49" data-pln="209" data-byn="169" data-rub="4500">
+        <span class="value">169</span><span class="currency">Br</span>
+      </div>
+      <div class="pricing-card-note">Когда первые 10 мест заполнены</div>
+    </div>
+
+    <!-- Бесплатно для своих -->
+    <div class="pricing-card free">
+      <div class="pricing-card-title">Для учеников школы</div>
+      <div style="font-size: 22px; font-weight: 800; color: #4CAF50; margin: 8px 0;">Бесплатно</div>
+      <div class="pricing-free-text">
+        Для учеников школы, которые продолжают индивидуальные или парные занятия летом 2026.
+      </div>
+    </div>
+
+    <!-- Пояснение про оплату -->
+    <div style="margin-top: 14px; padding: 10px 12px; background: rgba(255,255,255,0.06); border-radius: 10px; font-size: 11px; line-height: 1.5; color: rgba(255,255,255,0.75); text-align: center;">
+      💳 Оплата в EUR через Stripe. Цены в других валютах указаны для удобства — точная сумма зависит от курса вашего банка.
+    </div>
+  </div>
+
+  <!-- === ФИНАЛЬНЫЙ CTA === -->
+  <div class="cta-block">
+    <div class="cta-urgency">⚡ Только 10 мест по специальной цене</div>
+    <div class="cta-block-title">Записывайтесь — лето пролетит быстро</div>
+    <p class="cta-block-text">10 недель приключений, 20 занятий, английский без скуки. <br /> Старт 5 июня — Opening Day — знакомимся и играем!</p>
+    
+    <a href="#" class="btn-primary" id="signup-btn-bottom" onclick="alert('Скоро здесь будет ссылка на форму записи. Пока запишитесь через Telegram.'); return false;">
+      📝 Записаться в лагерь
+      <span class="small">Скидка 30% для первых 10 учеников</span>
+    </a>
+    
+    <a href="https://t.me/AnnaEnglishhh?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%83%D0%B7%D0%BD%D0%B0%D1%82%D1%8C%20%D0%BF%D1%80%D0%BE%20%D0%BB%D0%B5%D1%82%D0%BD%D0%B8%D0%B9%20%D0%BB%D0%B0%D0%B3%D0%B5%D1%80%D1%8C" class="btn-secondary" target="_blank" rel="noopener">
+      💬 Задать вопрос
+    </a>
+  </div>
+
+  <!-- === ФУТЕР === -->
+  <div class="footer">
+    <a href="mailto:englishstars2026@outlook.com">📧 englishstars2026@outlook.com</a>
+    <div style="margin: 12px 0 8px; font-size: 11px; line-height: 1.6;">
+      <a href="https://drive.google.com/file/d/1fLq4-Y9hOSELSRAgrH3qvyDWoBfMZqX1/view?usp=drive_link" target="_blank" rel="noopener" style="color: rgba(255,255,255,0.7); text-decoration: none;">Политика конфиденциальности</a>
+      <span style="color: rgba(255,255,255,0.3); margin: 0 6px;">•</span>
+      <a href="https://drive.google.com/file/d/1bQF7tmk4Vvr_AwDgGWfv1gKSTWRCIQG4/view?usp=drive_link" target="_blank" rel="noopener" style="color: rgba(255,255,255,0.7); text-decoration: none;">Правила оказания услуг</a>
+    </div>
+
+    <div class="copyright">© English Stars School, 2026 · NIP: 6793364526</div>
+  </div>
+
+</div>
+
+<script>
+  // Переключатель валют
+  const buttons = document.querySelectorAll('.currency-btn');
+  const symbols = { EUR: '€', PLN: 'zł', BYN: 'Br', RUB: '₽' };
+  
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const currency = btn.dataset.currency;
+      
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      document.querySelectorAll('.pricing-amount[data-' + currency.toLowerCase() + ']').forEach(el => {
+        const value = el.dataset[currency.toLowerCase()];
+        const symbol = symbols[currency];
+        el.querySelector('.value').textContent = value;
+        el.querySelector('.currency').textContent = ' ' + symbol;
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
