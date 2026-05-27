@@ -493,6 +493,52 @@
     white-space: nowrap;
   }
 
+  /* Карточка popular + last-spots: горящие места по стандартной цене */
+  .pricing-card.popular.last-spots::before {
+    content: '⚡ Осталось 3 места';
+    background: var(--red);
+    color: var(--white);
+  }
+
+  /* Карточка sold-out: места уже закончились */
+  .pricing-card.sold-out {
+    position: relative;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px dashed rgba(255, 255, 255, 0.35);
+  }
+
+  .pricing-card.sold-out::before {
+    content: '✕ Места закончились';
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--purple-dark);
+    color: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    font-size: 11px;
+    font-weight: 800;
+    padding: 4px 12px;
+    border-radius: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+  }
+
+  .pricing-card.sold-out .pricing-card-title {
+    color: rgba(255, 255, 255, 0.95);
+  }
+
+  .pricing-card.sold-out .pricing-amount {
+    text-decoration: line-through;
+    color: rgba(255, 255, 255, 0.45);
+  }
+
+  .pricing-card.sold-out .pricing-card-note {
+    color: rgba(255, 255, 255, 0.8);
+    opacity: 1;
+  }
+
   .pricing-card.free {
     background: linear-gradient(135deg, rgba(76, 175, 80, 0.2), rgba(76, 175, 80, 0.1));
     border: 2px solid rgba(76, 175, 80, 0.5);
@@ -646,7 +692,7 @@
     
     <a href="https://docs.google.com/forms/d/e/1FAIpQLSd48SAGMG6U48QTA2MbcHHv7p1K5EfzZrNWryAvqa8bdxyhmg/viewform" class="btn-primary" id="signup-btn-top" target="_blank" rel="noopener">
       📝 Записаться в лагерь
-      <span class="small">Только 10 мест по специальной цене</span>
+      <span class="small">⚡ Осталось только 3 места</span>
     </a>
     
     <a href="https://t.me/AnnaEnglishhh?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%83%D0%B7%D0%BD%D0%B0%D1%82%D1%8C%20%D0%BF%D1%80%D0%BE%20%D0%BB%D0%B5%D1%82%D0%BD%D0%B8%D0%B9%20%D0%BB%D0%B0%D0%B3%D0%B5%D1%80%D1%8C" class="btn-secondary" target="_blank" rel="noopener">
@@ -859,22 +905,22 @@
       <button class="currency-btn" data-currency="PLN">PLN zł</button>
     </div>
 
-    <!-- Карточка ранней птички -->
-    <div class="pricing-card popular">
+    <!-- Карточка ранней птички — МЕСТА ЗАКОНЧИЛИСЬ -->
+    <div class="pricing-card sold-out">
       <div class="pricing-card-title">Первые 10 учеников</div>
-      <div class="pricing-amount" data-eur="35" data-pln="149" data-byn="119" data-rub="3200">
+      <div class="pricing-amount regular" data-eur="35" data-pln="149" data-byn="119" data-rub="3200">
         <span class="value">119</span><span class="currency">Br</span>
       </div>
-      <div class="pricing-card-note">Скидка 30% — успейте записаться в первую группу</div>
+      <div class="pricing-card-note">Все 10 мест по этой цене уже заняты</div>
     </div>
 
-    <!-- Стандартная цена -->
-    <div class="pricing-card">
+    <!-- Стандартная цена — ОСТАЛОСЬ 3 МЕСТА -->
+    <div class="pricing-card popular last-spots">
       <div class="pricing-card-title">Стандартная цена</div>
-      <div class="pricing-amount regular" data-eur="49" data-pln="209" data-byn="169" data-rub="4500">
+      <div class="pricing-amount" data-eur="49" data-pln="209" data-byn="169" data-rub="4500">
         <span class="value">169</span><span class="currency">Br</span>
       </div>
-      <div class="pricing-card-note">Когда первые 10 мест заполнены</div>
+      <div class="pricing-card-note">⚡ Осталось только 3 места в группу</div>
     </div>
 
     <!-- Бесплатно для своих -->
@@ -894,7 +940,7 @@
 
   <!-- === ФИНАЛЬНЫЙ CTA === -->
   <div class="cta-block">
-    <div class="cta-urgency">⚡ Только 10 мест по специальной цене</div>
+    <div class="cta-urgency">⚡ Осталось только 3 места</div>
     <div class="cta-block-title">Записывайтесь — лето пролетит быстро</div>
     <p class="cta-block-text">10 недель приключений, 20 занятий, английский без скуки. Старт 5 июня — Opening Day — знакомимся и играем!</p>
     
